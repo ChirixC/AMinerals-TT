@@ -1,8 +1,3 @@
----
-markdown:
-  styles: ["styles.css"]
----
-
 <div style="background-color: #EBE3D5; color: #776B5D; text-align: center; padding: 15px; border-radius: 5px; ">
   <p style="font-size: 35px; margin: 0; font-weight: bold;">César Chirino</p>
   <p style="font-size: 20px; margin: 0;">Repo Evaluation</p>
