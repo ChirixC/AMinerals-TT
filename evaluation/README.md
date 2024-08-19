@@ -72,8 +72,25 @@ El proyecto opera dentro de un ecosistema de aplicaciones y servicios que maneja
 
 - ####  Root
   1. **setup.py**
-   - *Funcionabilidad:* Este archivo define el script de instalación para el paquete Python usando `setuptools`.Especifica el nombre del paquete, la versión, la descripción, el autor y la licencia.
-   - *Mejoras:* 
+      - *Funcionabilidad:* Este archivo define el script de instalación para el paquete Python usando `setuptools`.Especifica el nombre del paquete, la versión, la descripción, el autor y la licencia.
+      - *Mejoras:* Pensando en escalabilidad se podría agregar el metadato install_requires y usar pip_tools para mantener actualizadas tanto setup cómo requirements.txt. Además se podría agregar un `long_description_content_type='text/markdown'`
+  2. **requirements.txt**
+      - *Funcionabilidad:* Lista las dependencias del proyecto junto con sus versiones específicas.
+  3. **README.md**
+      - *Funcionabilidad:* Proporciona una introducción al proyecto, guías de instalación, pruebas y contribución.
+      - *Mejoras:* El README está vacío en su mayoría. Para mejorar la escalabilidad y reutilización del código, este archivo debe ser más detallado, explicando claramente el propósito del proyecto, cómo configurarlo, y cómo contribuir.
+  4. **Procfile**
+      - *Funcionabilidad:* Define comandos específicos para la ejecución en producción, como la instalación de dependencias y la ejecución del servidor con Gunicorn.
+      - *Mejoras:* El `Procfile` está diseñado para definir los comandos que se deben ejecutar para poner en marcha las aplicaciones o servicios en producción no en gestionar instalaciones de dependencias del sistema, esto debe hacerse antes de que la aplicación se ejecute, si se incluye aquí estaríamos verificando esta instalación cada que la aplicación inice es ineficiente. Las instalaciones se pueden manejar con un script o un Dockerfile, o en este caso en el `Makefile`.
+  5. **MakeFile**
+      - *Funcionabilidad:* Define un conjunto de comandos para automatizar tareas como la instalación de dependencias, limpieza de archivos temporales, operaciones con Git, y otros.
+      - *Mejoras:* Considerar agregar vrificaciones de entorno, para asegurar que por ejemplo Python esté instalado y su versión. Se podrían parametrizar algunos comandos, cómo la versión de Python.
+  6. **constants.py**
+      - *Funcionabilidad:* Define constantes relacionadas con la base de datos y carga variables de entorno desde un archivo .env.
+      - *Mejoras:* Validación para asegurarse que las variables de entorno críticas están bien definidas. Agrupar las configuraciones sobre las bases de datos en una clase o diccionario para facilitar gestión y escalabilidad.
+  7.  **main.py**
+      - *Funcionabilidad:* Este archivo configura y ejecuta una aplicación Flask, integrando también el módulo DASH.
+      - *Mejoras:* Eliminar importaciones que no se utilicen ![alt text](assets/image.png). Agregar documentación a cada sección del código. Manejar excepciones al cargar las configuraciones críticas para que la aplicación falle en forma controlada si algo va mal.
 - #### src
   - **assets**
     1. Funcionabilidad:  

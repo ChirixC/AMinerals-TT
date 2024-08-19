@@ -1,0 +1,276 @@
+/* Animación para deslizar la imagen desde abajo hacia arriba */
+@keyframes appear {
+    from {
+        /* Comienza fuera de la pantalla (abajo) */
+        opacity: 0;
+        /* Comienza invisible */
+    }
+
+    to {
+        /* Termina en su posición original */
+        opacity: 1;
+        /* Termina siendo completamente visible */
+    }
+}
+
+/* Animación para revelar el contenido de izquierda a derecha */
+@keyframes revealRight {
+    from {
+        clip-path: inset(0 0 0 100%);
+        /* Inicialmente, el área visible está recortada desde la derecha */
+        opacity: 0;
+        /* Comienza invisible */
+    }
+
+    to {
+        clip-path: inset(0 0 0 0);
+        /* Termina sin recortes, mostrando todo el contenido */
+        opacity: 1;
+        /* Termina siendo completamente visible */
+    }
+}
+
+/* Animación para revelar el contenido de abajo hacia arriba */
+@keyframes revealUp {
+    from {
+        clip-path: inset(100% 0 0 0);
+        /* Inicialmente, el área visible está recortada desde abajo */
+        opacity: 0;
+        /* Comienza invisible */
+    }
+
+    to {
+        clip-path: inset(0 0 0 0);
+        /* Termina sin recortes, mostrando todo el contenido */
+        opacity: 1;
+        /* Termina siendo completamente visible */
+    }
+}
+
+/* Animación para revelar el contenido de arriba hacia abajo */
+@keyframes revealDown {
+    from {
+        clip-path: inset(-100% 0 0 0);
+        /* Inicialmente, el área visible está recortada desde arriba */
+        opacity: 0;
+        /* Comienza invisible */
+    }
+
+    to {
+        clip-path: inset(0 0 0 0);
+        /* Termina sin recortes, mostrando todo el contenido */
+        opacity: 1;
+        /* Termina siendo completamente visible */
+    }
+}
+
+
+@keyframes flip {
+    0% {
+        transform: rotateX(90deg);
+        opacity: 0;
+    }
+
+    50% {
+        transform: rotateX(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: rotateX(0deg);
+        opacity: 1;
+    }
+}
+
+/* --------------------------------------------------- */
+/* MINA ANIMACIONES | LINEAS  - GRAFICOS - COMENTARIOS */
+/* --------------------------------------------------- */
+
+#mina-graph,
+#mina-comments {
+    animation: appear 1.5s ease-out forwards;
+    animation-delay: 2.5s;
+    opacity: 0;
+}
+
+
+#appearing-mina-vertical {
+    animation: revealUp 1.5s ease-out forwards;
+    animation-delay: 0.8s;
+    opacity: 0;
+}
+
+#appearing-mina-horizontal {
+    animation: revealUp 1.5s ease-out forwards;
+    animation-delay: 2s;
+    opacity: 0;
+}
+
+#appearing-mina-dot {
+    animation: appear 1.5s ease-out forwards;
+    animation-delay: 2s;
+    opacity: 0;
+}
+
+/* --------------------------------------------------- */
+/* CHANCADO ANIMACIONES | LINEAS  - GRAFICOS - COMENTARIOS */
+/* --------------------------------------------------- */
+
+#chancado-graph,
+#chancado-comments {
+    animation: appear 1.5s ease-out forwards;
+    animation-delay: 3s;
+    opacity: 0;
+}
+
+
+#appearing-chancado-vertical {
+    animation: revealDown 1.5s ease-out forwards;
+    animation-delay: 1.3s;
+    opacity: 0;
+}
+
+#appearing-chancado-horizontal {
+    animation: revealDown 1.5s ease-out forwards;
+    animation-delay: 2.5s;
+    opacity: 0;
+}
+
+#appearing-chancado-dot {
+    animation: appear 1.5s ease-out forwards;
+    animation-delay: 2.5s;
+    opacity: 0;
+}
+
+/* --------------------------------------------------- */
+/* CONCENTRADORA ANIMACIONES | LINEAS  - GRAFICOS - COMENTARIOS */
+/* --------------------------------------------------- */
+
+#concentradora-graph,
+#concentradora-comments {
+    animation: appear 1.5s ease-out forwards;
+    animation-delay: 3.5s;
+    opacity: 0;
+}
+
+
+#appearing-concentradora-vertical {
+    animation: revealUp 1.5s ease-out forwards;
+    animation-delay: 1.8s;
+    opacity: 0;
+}
+
+#appearing-concentradora-horizontal {
+    animation: revealUp 1.5s ease-out forwards;
+    animation-delay: 3s;
+    opacity: 0;
+}
+
+#appearing-concentradora-dot {
+    animation: appear 1.5s ease-out forwards;
+    animation-delay: 3s;
+    opacity: 0;
+}
+
+/* --------------------------------------------------- */
+/* TFT ANIMACIONES | LINEAS  - GRAFICOS - COMENTARIOS */
+/* --------------------------------------------------- */
+
+#tft-graph,
+#tft-comments {
+    animation: appear 1.5s ease-out forwards;
+    animation-delay: 4s;
+    opacity: 0;
+}
+
+
+#appearing-tft-vertical {
+    animation: revealDown 1.5s ease-out forwards;
+    animation-delay: 2.3s;
+    opacity: 0;
+}
+
+#appearing-tft-horizontal {
+    animation: revealDown 1.5s ease-out forwards;
+    animation-delay: 3.5s;
+    opacity: 0;
+}
+
+#appearing-tft-dot {
+    animation: appear 1.5s ease-out forwards;
+    animation-delay: 3.5s;
+    opacity: 0;
+}
+
+
+/* --------------------------------------------------- */
+/* PRODUCTOS ANIMACIONES | LINEAS  - GRAFICOS - COMENTARIOS */
+/* --------------------------------------------------- */
+
+#productos-graph,
+#productos-comments {
+    animation: appear 1.5s ease-out forwards;
+    animation-delay: 4.5s;
+    opacity: 0;
+}
+
+
+#appearing-productos-vertical {
+    animation: revealRight 1.5s ease-out forwards;
+    animation-delay: 2.8s;
+    opacity: 0;
+}
+
+#appearing-productos-horizontal {
+    animation: revealRight 1.5s ease-out forwards;
+    animation-delay: 4s;
+    opacity: 0;
+}
+
+#appearing-productos-dot {
+    animation: appear 1.5s ease-out forwards;
+    animation-delay: 4s;
+    opacity: 0;
+}
+
+/* ----------------------------------- */
+/* BLOQUE DE DIBUJOS CENTRALES */
+/* ----------------------------------- */
+
+
+
+/* Define la animación flip para cada imagen con un retraso incremental */
+#flipping-image-1 {
+    animation: flip 1.5s ease-out forwards;
+    animation-delay: 0.5s;
+    opacity: 0;
+    /* Empieza 0.5 segundos después */
+}
+
+#flipping-image-2 {
+    animation: flip 1.5s ease-out forwards;
+    animation-delay: 1s;
+    opacity: 0;
+    /* Empieza 1 segundo después del inicio de la primera imagen */
+}
+
+#flipping-image-3 {
+    animation: flip 1.5s ease-out forwards;
+    animation-delay: 1.5s;
+    opacity: 0;
+    /* Empieza 1.5 segundos después del inicio de la primera imagen */
+}
+
+#flipping-image-4 {
+    animation: flip 1.5s ease-out forwards;
+    animation-delay: 2s;
+    opacity: 0;
+    /* Empieza 2 segundos después del inicio de la primera imagen */
+}
+
+#flipping-image-5 {
+    animation: flip 1.5s ease-out forwards;
+    animation-delay: 2.5s;
+    opacity: 0;
+    /* Empieza 2.5 segundos después del inicio de la primera imagen */
+}
