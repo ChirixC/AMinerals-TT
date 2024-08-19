@@ -1,0 +1,19 @@
+@keyframes appear {
+    from {
+        /* Comienza fuera de la pantalla (abajo) */
+        opacity: 0;
+        /* Comienza invisible */
+    }
+
+    to {
+        /* Termina en su posición original */
+        opacity: 1;
+        /* Termina siendo completamente visible */
+    }
+}
+
+
+#lineatiempo-main-container {
+    animation: appear 1s ease-out forwards;
+    opacity: 0;
+}

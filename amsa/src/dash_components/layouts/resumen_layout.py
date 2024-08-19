@@ -20,10 +20,10 @@ def resumen_layout():
             dbc.Row([
                 html.Div(
                     children=[
-                        html.Span("PROCESO INTEGRADO | ", style={'font-weight': 'bold', 'color': '#007993'}),
-                        html.Span("Cumplimiento del 09 de Agosto al 15 de Agosto del 2024", style={'font-weight': 'normal', 'color': '#007993'})
+                        html.Span("PROCESO INTEGRADO | ", style={'fontWeight': 'bold', 'color': '#007993'}),
+                        html.Span("Cumplimiento del 09 de Agosto al 15 de Agosto del 2024", style={'fontWeight': 'normal', 'color': '#007993'})
                     ],
-                    style={'font-size': '16px', 'font-weight': 'bold', 'display': 'inline-block', 'text-align': 'center', 'width': '100%'}
+                    style={'font-size': '16px', 'fontWeight': 'bold', 'display': 'inline-block', 'textAlign': 'center', 'width': '100%'}
                 )
             ], align="center"),
              

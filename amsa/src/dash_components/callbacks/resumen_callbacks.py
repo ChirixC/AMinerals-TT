@@ -4,13 +4,14 @@ from ..graphs.resumen_comments import crear_comments
 from ...data_processing.data_loader import load_and_process_data
 from ...config import DATA_GRAFICOS_FILE_PATH, DATA_COMMENTS_FILE_PATH
 
-# TODO: El load data debería cargarla a caché sólo si cambió la data, habría que verificarla con un HASH
 def register_resumen_callbacks(app):
     """
     Registra todos los callbacks relacionados con la página de resumen de la aplicación Dash.
     
     Parameters:
         app (Dash): La instancia de la aplicación Dash.
+        
+    TODO: El load data debería cargarla a caché sólo si cambió la data, habría que verificarla con un HASH
     """
 
     # ---------------------------

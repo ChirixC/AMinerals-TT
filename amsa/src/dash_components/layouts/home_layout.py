@@ -26,7 +26,7 @@ def home_layout():
             dbc.Row(
                 dbc.Col([
                     # Información personal
-                    html.Span("César Chirino", style={'font-size': '24px', 'font-weight': 'bold', 'display': 'block'}),
+                    html.Span("César Chirino", style={'font-size': '24px', 'fontWeight': 'bold', 'display': 'block'}),
                     html.Span("Data Scientist", style={'font-size': '20px', 'display': 'block'}),
                     html.Span("Bienvenidos a mi solución a la prueba técnica para AMinerals 2024", style={'font-size': '16px', 'display': 'block'}),
                     html.Span("Espero sea de su agrado", style={'font-size': '16px', 'display': 'block'}),

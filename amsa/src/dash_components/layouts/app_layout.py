@@ -31,4 +31,5 @@ def app_layout():
             )
         ],
         fluid=True,  # Contenedor fluido que ocupa todo el ancho de la pantalla
+        style={'backgroundColor':'#f2f2f2'}
     )

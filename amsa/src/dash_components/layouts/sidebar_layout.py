@@ -17,11 +17,10 @@ def sidebar_layout():
     """
     return dbc.Col(
         [
-            # Título de la barra lateral
-            dbc.NavbarBrand("Menu", className="py-3"),
+
             
             # Encabezado de la barra lateral
-            html.H2("Sidebar", className="display-4"),
+            html.H3("Menu", className="display-4"),
             
             # Línea horizontal para separación
             html.Hr(),
@@ -31,6 +30,7 @@ def sidebar_layout():
                 [
                     dbc.NavLink("Home", href="/", active="exact"),
                     dbc.NavLink("Resumen", href="/resumen", active="exact"),
+                    dbc.NavLink("Linea Tiempo", href="/lineatiempo", active="exact"),
                 ],
                 vertical=True,
                 pills=True,

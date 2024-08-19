@@ -6,7 +6,7 @@ def sidebar_styles():
             "bottom": "0",
             "padding": "0",
             "height": "90vh",
-            "backgroundColor": "#f8f9fa",
+            "backgroundColor": "#f2f2f2",
             "zIndex": "1000",
         }
     }

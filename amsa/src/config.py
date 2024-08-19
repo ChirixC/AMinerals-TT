@@ -7,3 +7,4 @@ load_dotenv()
 # Acceder a las variables de entorno
 DATA_GRAFICOS_FILE_PATH = os.getenv('DATA_GRAFICOS_FILE_PATH')
 DATA_COMMENTS_FILE_PATH = os.getenv('DATA_COMMENTS_FILE_PATH')
+DATA_AUTOGESTION_FILE_PATH = os.getenv('DATA_AUTOGESTION_FILE_PATH')
