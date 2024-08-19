@@ -12,8 +12,6 @@
 - ##### [Análisis del código](#)
   - [Estructura general](#)
   - [Análisis detallado de funciones/métodos](#)
-  - [Algoritmos utilizados](#)
-  - [Manejo de datos](#)
 - ##### [Conclusiones y recomendaciones](#)
 
 ----
@@ -93,26 +91,229 @@ El proyecto opera dentro de un ecosistema de aplicaciones y servicios que maneja
       - *Mejoras:* Eliminar importaciones que no se utilicen ![alt text](assets/image.png). Agregar documentación a cada sección del código. Manejar excepciones al cargar las configuraciones críticas para que la aplicación falle en forma controlada si algo va mal.
 - #### src
   - **assets**
-    1. Funcionabilidad:  
+    1. css:
+       - *Funcionabilidad:* Contiene archivos de hojas de estilo en cascada (CSS) que se utilizan para aplicar estilos a la aplicación Dash.
+    2. img: 
+        - *Funcionabilidad:* Contiene imágenes que se utilizan en la aplicación.
+    3. logos:
+       - *Funcionabilidad:* Contiene archivos de logo e iconos que se utilizan en la aplicación.
   - **callbacks**
+    1. callbacks_autogestion.py
+       - *Funcionabilidad:* ``update_dropdown_options_list`` Actualiza las opciones de los dropdows basandose en los KPI seleccionados. ``download_data`` Permite descargar los datos filtrados según los criterios seleccionados (niveles, KPI, tipo de dato, y rango de fechas). ``show_table`` Muestra una tabla de datos filtrada según los criterios seleccionados. ``update_line_chart``. Muestra un gráfico de líneas basado en los filtros seleccionados.
+       - *Mejoras:* Documentación. Eliminar importaciones no utilizadas. Existe mucho código repetido en la función se pueden crear funciones auxiliares para manejar tareas comunes.  
+
+    2. callbacks_recorded.py
+       - *Funcionabilidad:* ``download_data_recorded``.Actualiza las opciones de los dropdowns para niveles y tipos de datos basándose en el KPI seleccionado. ``download_data_recordeds`` Permite descargar los datos filtrados según los criterios seleccionados. ``show_table_recorded`` Muestra una tabla de datos filtrada según los criterios seleccionados. 
+       - *Mejoras:* Documentación. Eliminar importaciones no utilizadas.
+  
+    3. callbacks.py
+       - *Funcionabilidad:* Centraliza las llamadas de los callbacks
+
   - **components**
-  - - **plots**
+  - - **plots**     
+        1. brandline.py
+           - *Funcionabilidad:*
+           - *Mejoras:*   
+        2. minaplots_medio_ambiente.py
+           - *Funcionabilidad:*
+           - *Mejoras:*
+        3. minaplots_seguridad.py
+           - *Funcionabilidad:*
+           - *Mejoras:*
+        4. minaplots.py
+           - *Funcionabilidad:*
+           - *Mejoras:*
+    1. api_adls.py
+       - *Funcionabilidad:*
+       - *Mejoras:*
+    2. archivero_comp.py
+       - *Funcionabilidad:*
+       - *Mejoras:*
+    3. catalogo.py
+       - *Funcionabilidad:*
+       - *Mejoras:*
+    4. data.py
+       - *Funcionabilidad:*
+       - *Mejoras:*
+    5. datepicker.py
+       - *Funcionabilidad:*
+       - *Mejoras:*
+    6. footer.py
+       - *Funcionabilidad:*
+       - *Mejoras:*
+    7. get_log_user_data.py
+       - *Funcionabilidad:*
+       - *Mejoras:*
+    8. get_timestamp.py
+       - *Funcionabilidad:*
+       - *Mejoras:*
+    9. header.py
+       - *Funcionabilidad:*
+       - *Mejoras:*
+    10. home.py
+       - *Funcionabilidad:*
+       - *Mejoras:*
+    11. indicadores_generales_comp.py
+       - *Funcionabilidad:*
+       - *Mejoras:*
+    12. navbar_indicadores_old.py
+       - *Funcionabilidad:*
+       - *Mejoras:*
+    13. navbar_indicadores.py
+       - *Funcionabilidad:*
+       - *Mejoras:*
+    14. navbar_reporte.py
+       - *Funcionabilidad:*
+       - *Mejoras:*
+    15. navbar.py
+       - *Funcionabilidad:*
+       - *Mejoras:*
+    16. portada.py
+       - *Funcionabilidad:*
+       - *Mejoras:*
+    17. powerbi.py
+       - *Funcionabilidad:*
+       - *Mejoras:*
+    18. resumen_ejecutivo.py
+       - *Funcionabilidad:*
+       - *Mejoras:*
+    19. sidebar.py
+       - *Funcionabilidad:*
+       - *Mejoras:*
+    20. tabla.py
+       - *Funcionabilidad:*
+       - *Mejoras:*
   - **config**
+    1. app_config.py
+       - *Funcionabilidad:*
+       - *Mejoras:*
+    2. routes.py
+       - *Funcionabilidad:*
+       - *Mejoras:*
+    3. user_handler.py
+       - *Funcionabilidad:*
+       - *Mejoras:*
+   
   - **databases**
+    1. db_autogestion_recorded.py
+       - *Funcionabilidad:*
+       - *Mejoras:*
+    2. db_catalogo.py
+       - *Funcionabilidad:*
+       - *Mejoras:*
+    3. db_demo_table.py
+       - *Funcionabilidad:*
+       - *Mejoras:*
+    4. db_indicadorees.py
+       - *Funcionabilidad:*
+       - *Mejoras:*
+    5. db_kpi.py
+       - *Funcionabilidad:*
+       - *Mejoras:*
+    6. db_portada.py
+       - *Funcionabilidad:*
+       - *Mejoras:*
+    7. db_resumen_ejecutivo.py 
+       - *Funcionabilidad:*
+       - *Mejoras:*
   - **pages**
+    1. arbol.py
+       - *Funcionabilidad:*
+       - *Mejoras:*
+    2. archivos.py
+       - *Funcionabilidad:*
+       - *Mejoras:*
+    3. catalogo.py
+       - *Funcionabilidad:*
+       - *Mejoras:*
+    4. concentradora.py
+          - *Funcionabilidad:*
+          - *Mejoras:*
+    5. datos_graficos.py
+          - *Funcionabilidad:*
+          - *Mejoras:*
+    6. datos_kpi.py
+          - *Funcionabilidad:*
+          - *Mejoras:*
+    7. datos_pi.py
+          - *Funcionabilidad:*
+          - *Mejoras:*
+    8. demo_powerbi.py
+          - *Funcionabilidad:*
+          - *Mejoras:*
+    9.  demo.py
+           - *Funcionabilidad:*
+           - *Mejoras:*
+    10. home.py
+           - *Funcionabilidad:*
+           - *Mejoras:*
+    11. indicadores_generales.py
+           - *Funcionabilidad:*
+           - *Mejoras:*
+    12. mina.py
+           - *Funcionabilidad:*
+           - *Mejoras:*
+    13. portada.py
+           - *Funcionabilidad:*
+           - *Mejoras:*
+    14. puerto.py
+           - *Funcionabilidad:*
+           - *Mejoras:*
+    15. recursos_hidricos.py
+           - *Funcionabilidad:*
+           - *Mejoras:*
+    16. report_em_ml_informe_semanal.py
+           - *Funcionabilidad:*
+           - *Mejoras:*
+    17. report_em_rs_one_room.py
+           - *Funcionabilidad:*
+           - *Mejoras:*
+    18. report_em_rs.py
+           - *Funcionabilidad:*
+           - *Mejoras:*
+    19. report_em_rs7x7diaria.py
+           - *Funcionabilidad:*
+           - *Mejoras:*
+    20. report_em_rs7x7pr.py
+           - *Funcionabilidad:*
+           - *Mejoras:*
+    21. reportes.py
+           - *Funcionabilidad:*
+           - *Mejoras:*
+    22. tft.py
+           - *Funcionabilidad:*
+           - *Mejoras:*
+    
   - **utils**
+    1. utils.py
+       - *Funcionabilidad:*
+       - *Mejoras:*
+    
   - - **api**
+      1. dl_api.py
+          - *Funcionabilidad:*
+          - *Mejoras:*
   - - - **connectors**
+        1. cosmos_db_conn.py
+            - *Funcionabilidad:*
+            - *Mejoras:*
+        2. databricks_conn.py
+            - *Funcionabilidad:*
+            - *Mejoras:*
+        3. datalake_conn.py
+            - *Funcionabilidad:*
+            - *Mejoras:*
+        4. piwebapi_conn.py
+            - *Funcionabilidad:*
+            - *Mejoras:*
   - - **commands**
+      1. get_wheels.py
+          - *Funcionabilidad:*
+          - *Mejoras:* 
   1. app.py
+   - *Funcionabilidad:* Se encarga de configurar y lanzar la aplicación Dash dentro de un servidor Flask. Define las rutas y las hojas de estilo externas que se usarán en la aplicación. Se asegura de que las rutas estén protegidas mediante la función``login_required``.
+   - *Mejoras:* Eliminar importaciones repetidas es redundante ![alt text](image.png). Eliminar importaicones no utilizadas. Manejar posibles excepciones o errores en ``login_required``. Agregar documentación.
 
-**Algoritmos utilizados**
-
-|| Ejemplos de algoritmos que se utilizaron y cómo se podrían modificar para mejorar
-
-**Manejo de datos**
-
-|| Cómo se utilizó las bases de datos
 ----
 
 ----
