@@ -11,7 +11,7 @@ call .venv\Scripts\activate
 pip install -r requirements.txt
 
 :: Ejecutar la aplicación
-start /B python app.py
+start /B python main.py
 
 :: Esperar un momento para asegurarse de que la aplicación se haya iniciado
 timeout /t 5 /nobreak >nul
