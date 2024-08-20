@@ -12,7 +12,7 @@
 - ##### [Análisis del código](#)
   - [Estructura general](#)
   - [Análisis detallado de funciones/métodos](#)
-- ##### [Conclusiones y recomendaciones](#)
+- ##### [Recomendaciones](#)
 
 ----
 ### **Introducción** 
@@ -100,7 +100,7 @@ El proyecto opera dentro de un ecosistema de aplicaciones y servicios que maneja
   - **callbacks**
     1. callbacks_autogestion.py
        - *Funcionabilidad:* ``update_dropdown_options_list`` Actualiza las opciones de los dropdows basandose en los KPI seleccionados. ``download_data`` Permite descargar los datos filtrados según los criterios seleccionados (niveles, KPI, tipo de dato, y rango de fechas). ``show_table`` Muestra una tabla de datos filtrada según los criterios seleccionados. ``update_line_chart``. Muestra un gráfico de líneas basado en los filtros seleccionados.
-       - *Mejoras:* Documentación. Eliminar importaciones no utilizadas. Existe mucho código repetido en la función se pueden crear funciones auxiliares para manejar tareas comunes.  
+       - *Mejoras:* Documentación. Eliminar importaciones no utilizadas. Existe mucho código repetido en la función se pueden crear funciones auxiliares para manejar tareas comunes. 
 
     2. callbacks_recorded.py
        - *Funcionabilidad:* ``download_data_recorded``.Actualiza las opciones de los dropdowns para niveles y tipos de datos basándose en el KPI seleccionado. ``download_data_recordeds`` Permite descargar los datos filtrados según los criterios seleccionados. ``show_table_recorded`` Muestra una tabla de datos filtrada según los criterios seleccionados. 
@@ -112,210 +112,166 @@ El proyecto opera dentro de un ecosistema de aplicaciones y servicios que maneja
   - **components**
   - - **plots**     
         1. brandline.py
-           - *Funcionabilidad:*
-           - *Mejoras:*   
+           - *Funcionabilidad:* Define una función para crear un gráfico combinado de barras y líneas utilizando Plotly y Dash.
         2. minaplots_medio_ambiente.py
-           - *Funcionabilidad:*
-           - *Mejoras:*
+           - *Funcionabilidad:* Define una función para crear un gráfico de barras
+           - *Mejoras:* Añadir documentación. Borrar código muerto.
         3. minaplots_seguridad.py
-           - *Funcionabilidad:*
-           - *Mejoras:*
+           - *Funcionabilidad:* Define una función para crear un gráfico de barras con líneas superpuestas.
+           - *Mejoras:* Añadir documentación. Borrar código muerto.
         4. minaplots.py
-           - *Funcionabilidad:*
-           - *Mejoras:*
+           - *Funcionabilidad:* Define una función para crear un gráfico de barras
+           - *Mejoras:* Añadir documentación. Borrar código muerto.
     1. api_adls.py
-       - *Funcionabilidad:*
-       - *Mejoras:*
+       - *Funcionabilidad:* Esta clase está diseñada para manejar la conexión con Azure Blob Storage y proporcionar métodos para interactuar con los blobs.
+       - *Mejoras:* Evitar Hardcodear variables como: `folder_on_server = 'uploads'`. Manejar excepciones. Añadir documentación
     2. archivero_comp.py
-       - *Funcionabilidad:*
-       - *Mejoras:*
+       - *Funcionabilidad:* Maneja la creación de una página con diferentes "Cards"
+       - *Mejoras:* En Dash manejar los styles en el formaco camelCase
     3. catalogo.py
-       - *Funcionabilidad:*
-       - *Mejoras:*
+       - *Funcionabilidad:* Esta función crea una página que contiene un título, un dropdown para seleccionar nombres y una tabla que muestra datos del DataFrame df.
+       - *Mejoras:* Consistencia en los styles: ![alt text](assets/image-2.png) ![alt text](assets/image-3.png) debería ser camelCase en ambos casos
     4. data.py
-       - *Funcionabilidad:*
-       - *Mejoras:*
+       - *Funcionabilidad:* Se conecta a una base de datos de Databricks, ejecuta dos consultas SQL para devolver dos DataFrames
+       - *Mejoras:* Documentación. Consistencia en el código ![alt text](assets/image-4.png). Manejar Excepciones
     5. datepicker.py
-       - *Funcionabilidad:*
-       - *Mejoras:*
+       - *Funcionabilidad:* Crea un componente DatePickerRange de Dash con parámetros que dependen del valor del argumento id_componente.
+       - *Mejoras:* La variable `fecha_hoy` se define de la misma forma 2 veces.
     6. footer.py
-       - *Funcionabilidad:*
-       - *Mejoras:*
+       - *Funcionabilidad:* Genera un componente de pie de página (footer)
     7. get_log_user_data.py
-       - *Funcionabilidad:*
-       - *Mejoras:*
+       - *Funcionabilidad:* Obtiene los detalles del usuario autenticado usando el objeto auth. Devuelve un diccionario con el nombre y correo electrónico del usuario.
     8. get_timestamp.py
-       - *Funcionabilidad:*
-       - *Mejoras:*
+       - *Funcionabilidad:* Diferentes funciones para calcular y devolver fechas.
     9. header.py
-       - *Funcionabilidad:*
-       - *Mejoras:*
+       - *Funcionabilidad:* Construye un encabezado para la aplicación, que incluye una barra lateral de navegación y un área de contenido. La barra lateral se construye a partir de las páginas registradas en la aplicación.
+       - *Mejoras:* El código en icon podría ser más eficiente si se usa un diccionario en lugar de múltiples if-elif statements. Limpiar el código muerto.
     10. home.py
-       - *Funcionabilidad:*
-       - *Mejoras:*
+       - *Funcionabilidad:* Define la estructura de la página de inicio para la aplicación
     11. indicadores_generales_comp.py
-       - *Funcionabilidad:*
-       - *Mejoras:*
+       - *Funcionabilidad:* Genera diferentes elementos visuales en la aplicación
+       - *Mejoras:* iterrow puede llegar a ser ineficiente en grandes números de datos.
     12. navbar_indicadores_old.py
-       - *Funcionabilidad:*
-       - *Mejoras:*
-    13. navbar_indicadores.py
-       - *Funcionabilidad:*
-       - *Mejoras:*
+       - *Funcionabilidad:* Define un componente de barra de navegación para la aplicación.
+       - *Mejoras:* Borrar importaciones innecesarias. Documentar.
+    13. navbar_indicadores.py 
+       - *Funcionabilidad:* Define un componente de barra de navegación para la aplicación.
+       - *Mejoras:* Borrar importaciones innecesarias. Documentar.
     14. navbar_reporte.py
-       - *Funcionabilidad:*
-       - *Mejoras:*
+       - *Funcionabilidad:* Define un componente de barra de navegación para la aplicación.
+       - *Mejoras:* Borrar importaciones innecesarias. Documentar.
     15. navbar.py
-       - *Funcionabilidad:*
-       - *Mejoras:*
+       - *Funcionabilidad:* Define un componente de barra de navegación para la aplicación.
+       - *Mejoras:* Borrar importaciones innecesarias. Documentar.
     16. portada.py
-       - *Funcionabilidad:*
-       - *Mejoras:*
+       - *Funcionabilidad:* efine un componente de portada para la aplicación con múltiples gráficos y elementos de datos.
+       - *Mejoras:* Separar estilos. Documentar el código.
     17. powerbi.py
-       - *Funcionabilidad:*
-       - *Mejoras:*
+       - *Funcionabilidad:* Crear una página de Dash que incrusta un iframe con un informe de Power BI.
     18. resumen_ejecutivo.py
-       - *Funcionabilidad:*
-       - *Mejoras:*
+       - *Funcionabilidad:* Define una función que crea una visualización de un resumen ejecutivo en la aplicación.
+       - *Mejoras:* Eliminar importaciones. Documentar el código innecesarias, 
     19. sidebar.py
-       - *Funcionabilidad:*
-       - *Mejoras:*
+       - *Funcionabilidad:* Define un componente de barra lateral (sidebar). La barra lateral incluye varias secciones colapsables con botones que permiten expandir o contraer el contenido
     20. tabla.py
-       - *Funcionabilidad:*
-       - *Mejoras:*
+       - *Funcionabilidad:* Define varios componentes para visualizar y gestionar datos mediante tablas y gráficos.
   - **config**
     1. app_config.py
-       - *Funcionabilidad:*
-       - *Mejoras:*
+       - *Funcionabilidad:* Archivo para configuración de parametros necesarios para la integración con Azure.
+       - *Mejoras:* Utiliza un almacenamiento de sesiones basado en base de datos o en un servidor de caché como Redis.
     2. routes.py
-       - *Funcionabilidad:*
-       - *Mejoras:*
+       - *Funcionabilidad:* Maneja las rutas y la lógica de autenticación en la aplicación.
+       - *Mejoras:* Documentación. 
     3. user_handler.py
-       - *Funcionabilidad:*
-       - *Mejoras:*
+       - *Funcionabilidad:* Proporciona un decorador `login_required` para proteger las rutas que requieren autenticación.
    
   - **databases**
     1. db_autogestion_recorded.py
-       - *Funcionabilidad:*
-       - *Mejoras:*
+       - *Funcionabilidad:* Maneja la creación y el guardado de un DataFrame en formato xls a partir de una consulta a una base de datos.
+       - *Mejoras:* Manejar la conexión en un bloque try-except para cerrar la conexión así ocurra alguna excepción.
     2. db_catalogo.py
-       - *Funcionabilidad:*
-       - *Mejoras:*
+       - *Funcionabilidad:* Maneja la creación y procesamiento de un DataFrame a partir de una consulta SQL, así como la obtención de categorías agrupadas.
+       - *Mejoras:* Pruebas y validación de los datos obtenidos de la query.
     3. db_demo_table.py
-       - *Funcionabilidad:*
-       - *Mejoras:*
+       - *Funcionabilidad:* Gestiona un DataFrame que se construye a partir de una consulta SQL y lo guarda como archivo xlsx.
+       - *Mejoras:* Manejar posibles excepciones.
     4. db_indicadorees.py
-       - *Funcionabilidad:*
-       - *Mejoras:*
+       - *Funcionabilidad:* Gestiona varios DataFrames relacionados con distintos KPIs y datos operacionales, construidos a partir de consultas SQL.
+       - *Mejoras:* Cerrar las conexiones hechas a la base de datos.  La query de consulta se repite varias veces, extraer esta lógica para evitar duplicar código. Mejorar la estructura, separa la lógica de las consultas SQL a la lógica del manejo del DataFrame en archivos diferentes.
     5. db_kpi.py
-       - *Funcionabilidad:*
-       - *Mejoras:*
+       - *Funcionabilidad:* Maneja la obtención de datos de una base de datos y almacena los resultados en DataFrames.
+       - *Mejoras:* Cerrar conexiones. Borrar prints. Separar lógica de Querys y de manejo del DataFrame.
     6. db_portada.py
-       - *Funcionabilidad:*
-       - *Mejoras:*
+       - *Funcionabilidad:*Maneja la obtención de datos de una base de datos y almacena los resultados en DataFrames.
     7. db_resumen_ejecutivo.py 
-       - *Funcionabilidad:*
-       - *Mejoras:*
+       - *Funcionabilidad:* Maneja y procesa la obtención de datos de varios KPIs de una base de datos y almacena los resultados en DataFrames.
   - **pages**
-    1. arbol.py
-       - *Funcionabilidad:*
-       - *Mejoras:*
-    2. archivos.py
-       - *Funcionabilidad:*
-       - *Mejoras:*
-    3. catalogo.py
-       - *Funcionabilidad:*
-       - *Mejoras:*
-    4. concentradora.py
-          - *Funcionabilidad:*
-          - *Mejoras:*
-    5. datos_graficos.py
-          - *Funcionabilidad:*
-          - *Mejoras:*
-    6. datos_kpi.py
-          - *Funcionabilidad:*
-          - *Mejoras:*
-    7. datos_pi.py
-          - *Funcionabilidad:*
-          - *Mejoras:*
-    8. demo_powerbi.py
-          - *Funcionabilidad:*
-          - *Mejoras:*
-    9.  demo.py
-           - *Funcionabilidad:*
-           - *Mejoras:*
-    10. home.py
-           - *Funcionabilidad:*
-           - *Mejoras:*
-    11. indicadores_generales.py
-           - *Funcionabilidad:*
-           - *Mejoras:*
-    12. mina.py
-           - *Funcionabilidad:*
-           - *Mejoras:*
-    13. portada.py
-           - *Funcionabilidad:*
-           - *Mejoras:*
-    14. puerto.py
-           - *Funcionabilidad:*
-           - *Mejoras:*
-    15. recursos_hidricos.py
-           - *Funcionabilidad:*
-           - *Mejoras:*
-    16. report_em_ml_informe_semanal.py
-           - *Funcionabilidad:*
-           - *Mejoras:*
-    17. report_em_rs_one_room.py
-           - *Funcionabilidad:*
-           - *Mejoras:*
-    18. report_em_rs.py
-           - *Funcionabilidad:*
-           - *Mejoras:*
-    19. report_em_rs7x7diaria.py
-           - *Funcionabilidad:*
-           - *Mejoras:*
-    20. report_em_rs7x7pr.py
-           - *Funcionabilidad:*
-           - *Mejoras:*
-    21. reportes.py
-           - *Funcionabilidad:*
-           - *Mejoras:*
-    22. tft.py
-           - *Funcionabilidad:*
-           - *Mejoras:*
+  
+   Los archivos dentro del directorio src/pages/ forman las diversas páginas de la aplicación web, cada una diseñada para gestionar y mostrar diferentes tipos de información relevante para los usuarios. Aunque cada archivo se enfoca en un área o tipo de dato específico, comparten algunas funcionalidades clave:
+   <br>
+     - Renderización de Contenidos
+     - Interacción con Componentes Dash
+     - Integración con Callbacks
+     - Acceso y Visualización de Datos
+     - Diseño de Interfaces
+   <br>
     
   - **utils**
     1. utils.py
-       - *Funcionabilidad:*
-       - *Mejoras:*
+       - *Funcionabilidad:* Proporciona algunas funciones útiles para manejar variables de entorno y ejecutar tareas en paralelo o secuencialmente.
+       - *Mejoras:* Documentación
     
   - - **api**
       1. dl_api.py
-          - *Funcionabilidad:*
-          - *Mejoras:*
+          - *Funcionabilidad:* Se encarga de interactuar con Azure Data Lake para operaciones como cargar, descargar, y gestionar archivos y directorios.
   - - - **connectors**
         1. cosmos_db_conn.py
-            - *Funcionabilidad:*
-            - *Mejoras:*
+            - *Funcionabilidad:*  Se encarga de conectar con una base de datos de Cosmos DB en Azure y proporciona métodos para consultar datos.
         2. databricks_conn.py
-            - *Funcionabilidad:*
-            - *Mejoras:*
+            - *Funcionabilidad:* Define una clase Databricks para conectar y consultar datos en un clúster de Databricks utilizando la API de Databricks SQL.
         3. datalake_conn.py
-            - *Funcionabilidad:*
-            - *Mejoras:*
+            - *Funcionabilidad:* Define una clase Datalake que extiende DataLakeAPIClient para interactuar con un sistema de almacenamiento de datos en un Data Lake.
         4. piwebapi_conn.py
-            - *Funcionabilidad:*
-            - *Mejoras:*
+            - *Funcionabilidad:* Define una clase PIWebAPI con un método estático check_connection para verificar la conexión a un servidor PI Web API.
+
   - - **commands**
       1. get_wheels.py
-          - *Funcionabilidad:*
-          - *Mejoras:* 
+          - *Funcionabilidad:* Se encarga de descargar archivos de paquetes .whl desde Azure Data Lake y de generar un archivo de requisitos que incluye tanto los paquetes necesarios como los archivos .whl.
+          - *Mejoras:* Manejar posibles excepciones. Mostrar mensaje de descarga para mejorar la experiencia del usuario.
   1. app.py
    - *Funcionabilidad:* Se encarga de configurar y lanzar la aplicación Dash dentro de un servidor Flask. Define las rutas y las hojas de estilo externas que se usarán en la aplicación. Se asegura de que las rutas estén protegidas mediante la función``login_required``.
-   - *Mejoras:* Eliminar importaciones repetidas es redundante ![alt text](image.png). Eliminar importaicones no utilizadas. Manejar posibles excepciones o errores en ``login_required``. Agregar documentación.
+   - *Mejoras:* Eliminar importaciones repetidas es redundante ![alt text](assets/image-1.png). Eliminar importaicones no utilizadas. Manejar posibles excepciones o errores en ``login_required``. Agregar documentación.
 
 ----
+### Recomendaciones
+
+**Eficiencia de Recursos:**
+Asegurarse de cerrar conexiones y liberar recursos después de su uso. Por ejemplo, en las conexiones a bases de datos y archivos, utilizar contextos (with) para gestionar automáticamente el cierre de recursos.
+
+**Optimización de Consultas:**
+Asegurarse de que las consultas SQL y las consultas a Cosmos DB estén optimizadas. Utilizar índices apropiados y revisar los planes de ejecución para identificar cuellos de botella en el rendimiento.
+
+**Paralelismo:**
+Implementar técnicas de procesamiento en paralelo, especialmente para tareas de carga de datos o consultas a bases de datos. Asegurarse de que los servicios en la nube estén configurados para manejar la escalabilidad.
+
+**Colas y Streams:**
+Si el proyecto maneja flujos de datos en tiempo real, considerar el uso de servicios de colas y transmisión (como Azure Event Hubs) para gestionar los datos de manera eficiente.
+
+**Manejo de Excepciones:**
+Implementar un manejo de excepciones robusto para todas las operaciones críticas, como la conexión a servicios, la descarga y carga de archivos, y la ejecución de consultas. Asegurarse de registrar y manejar errores de manera adecuada para facilitar la depuración.
+
+**Validación de Datos:**
+Validar los datos antes de procesarlos para evitar errores relacionados con datos corruptos o mal formateados. Implementar mecanismos de verificación para asegurarse de que los datos se están cargando y procesando correctamente.
+
+**Modularización del Código:**
+Organizar el código en módulos y funciones claramente definidos. Esto facilita la comprensión, el mantenimiento y la reutilización del código. Por ejemplo, separar las funcionalidades de conexión, carga de datos y procesamiento en módulos distintos, así como los estilos.
+
+**Documentación y Comentarios:**
+Documentar el código de manera exhaustiva. Añadir comentarios explicativos en las secciones críticas y proporcionar documentación para las funciones y clases. Esto ayudará a los futuros desarrolladores a entender y mantener el código. Evitar comentarios que se puedan malinterpretar si llegan al cliente: ![alt text](assets/image-6.png)
+
+**Logging y Monitoreo:**
+Implementar un sistema de logging y monitoreo para rastrear la ejecución del código y detectar problemas en tiempo real. Los logs deben ser informativos y deben ayudar en la resolución de problemas.
 
 ----
-
+César Chirino
 ----
