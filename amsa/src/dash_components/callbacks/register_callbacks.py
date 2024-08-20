@@ -52,8 +52,6 @@ def register_callbacks(app: Dash):
         Returns:
             html.Div: El layout correspondiente a la página actual o un mensaje de error 404.
         """
-        print(pathname)
-        print('entra en display')
         
         # Lógica de enrutamiento para devolver el layout correspondiente según la URL
         if pathname == '/':

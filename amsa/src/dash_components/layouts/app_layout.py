@@ -18,7 +18,7 @@ def app_layout():
                             # Componente colapsable que contiene la barra lateral
                             dbc.Collapse(sidebar_layout(), id="sidebar-collapse", is_open=True),
                         ],
-                        xs=12, md=3, lg=2, style={"padding": "0"}  # Configuración de tamaño según la pantalla
+                        xs=12, md=3, lg=2, style={"padding": "0", 'backgroundColor': '#f2f2f2'}  # Configuración de tamaño según la pantalla
                     ),
                     # Columna de contenido principal
                     dbc.Col(
@@ -31,5 +31,4 @@ def app_layout():
             )
         ],
         fluid=True,  # Contenedor fluido que ocupa todo el ancho de la pantalla
-        style={'backgroundColor':'#f2f2f2'}
     )

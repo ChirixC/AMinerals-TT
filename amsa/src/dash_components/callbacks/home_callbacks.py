@@ -8,7 +8,6 @@ def register_home_callbacks(app):
     Parameters:
         app (Dash): La instancia de la aplicación Dash.
     """
-    print('entra en register_home_callback')
 
     @app.callback(
         Output('counter-output', 'children'),
