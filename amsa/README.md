@@ -131,7 +131,7 @@ tests/
         ```
        http://127.0.0.1:8050/
         ```        
-2. ### Automático:
+2. ### Automático (Windows):
     - Ejecutar instalador
         ```
         setup_win.bat
